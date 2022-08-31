@@ -1,17 +1,17 @@
-"ファイル読み込み時の文字コード
-set encoding=utf-8
-scriptencoding utf-8
-"保存時の文字コード
-set fileencoding=utf-8
-"⬜︎や○が崩れる問題を解決
-set ambiwidth=double
+set encoding=utf-8 "ファイル読み込み時の文字コード
+scriptencoding utf-8 " Vim Script内でマルチバイトを使う場合の設定
+set fileencoding=utf-8 "保存時の文字コード
+set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp,ucs-boms,cp932
+set fileformats=unix,dos,mac
+
+set ambiwidth=double "⬜︎や○が崩れる問題を解決
+" Vim scritptにvimrcも含まれるので、日本語でコメントを書く場合は先頭にこの設定が必要になる
+
+"文字コードをUFT-8に設定
+set fenc=utf-8
 
 
 "Setting=============================================
-"文字コードをUFT-8に設定
-set fenc=utf-8
-" 全角文字専用の設定
-set ambiwidth=double
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
@@ -57,7 +57,6 @@ set showmode
 " シンタックスハイライトの有効化
 syntax enable
 set background=dark
-colorscheme desert
 syntax on
 " 行末のスペースを可視化
 set listchars=tab:^\ ,trail:~
@@ -65,6 +64,8 @@ set listchars=tab:^\ ,trail:~
 hi Comment ctermfg=8
 " タイトルを表示
 set title
+set showcmd " 打ったコマンドをステータスラインの下に表示
+set ruler " ステータスラインの右側にカーソルの位置を表示する
 
 "検索系==========================================
 " インクリメンタルサーチ（1文字入力ごとに検索する）
@@ -121,4 +122,8 @@ noremap <S-l> $
 " 折り返し時に表示行単位での移動できるようにする
 noremap j gj
 noremap k gk
+
+"color scheme
+"colorscheme molokai
+"let g:molokai_original = 1
 

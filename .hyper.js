@@ -9,10 +9,10 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"font hack", "font hack nerd font", Menlo, Consolas, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -33,10 +33,10 @@ module.exports = {
     cursorAccentColor: '#000',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
+    cursorShape: 'BEAM',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
-    cursorBlink: false,
+    cursorBlink: true,
 
     // color of the text
     foregroundColor: '#fff',
@@ -67,7 +67,8 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    // padding: '2px 18px 10px 18px',
+    padding: '20px 18px 6px 18px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -110,7 +111,7 @@ module.exports = {
     shellArgs: ['--login'],
 
     // for environment variables
-    env: {},
+    env: {LANG: 'ja_JP.UTF-8'},
 
     // set to `false` for no bell
     bell: 'SOUND',
@@ -140,7 +141,16 @@ module.exports = {
     // for advanced config flags please refer to https://hyper.is/#cfg
 
     //hyper opacity
-    opacity: 0.80,
+    opacity: 0.8,
+
+    //hyper border
+    // hyperBorder: {
+    //   animate : {
+    //     duration: '0.125s'
+    //   },
+    //   borderColors: ['#3F33FF', '#6EF9EA'],
+    // },
+
   },
 
   // a list of plugins to fetch and install from npm
@@ -149,14 +159,12 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-   // "hyper-material-theme",
-    "hyper-snazzy",
-   "hyper-tab-icons",
-    "hyper-statusline",
-    "hyper-opacity",
-    //"hyperborder"
-  ],
+  plugins: [//"hyper-snazzy",
+  "hyper-iceberg", // "hyperborder"
+  "hyper-statusline", "hyper-opacity",
+  "hyper-tabs-enhanced",
+  // "hyper-arc-dark-controls"
+],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
